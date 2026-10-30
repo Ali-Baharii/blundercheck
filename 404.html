@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retake (formerly Blundercheck)</title>
+<link rel="canonical" href="https://ali-baharii.github.io/retake/">
+<meta http-equiv="refresh" content="2; url=https://ali-baharii.github.io/retake/">
+<script>
+  // Blundercheck was renamed to Retake. Keep shared links (including #text=...) working
+  // and remove the old offline copy so it doesn't linger.
+  (async () => {
+    try {
+      const regs = (navigator.serviceWorker && await navigator.serviceWorker.getRegistrations()) || [];
+      for (const r of regs) if (r.scope.includes('/blundercheck/')) await r.unregister();
+    } catch (e) { /* ignore */ }
+    location.replace('https://ali-baharii.github.io/retake/' + location.search + location.hash);
+  })();
+</script>
+</head>
+<body style="font-family:system-ui,sans-serif;padding:24px">
+<p>Blundercheck is now <a href="https://ali-baharii.github.io/retake/">Retake</a>. Your saved games are still there. On iPhone, add Retake to your Home Screen again.</p>
+</body>
+</html>
